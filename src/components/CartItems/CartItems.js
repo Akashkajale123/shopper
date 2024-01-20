@@ -3,8 +3,9 @@ import "./CartItems.css";
 import { ShopContext } from "../../context/ShopContext";
 import remove_icon from "../../Assets/cart_cross_icon.png";
 const CartItems = () => {
-  const { all_product, cartItems, removeFromCart,getTotalCartAmount } = useContext(ShopContext);
-//   console.log(getTotalCartAmount())
+  const { all_product, cartItems, removeFromCart, getTotalCartAmount } =
+    useContext(ShopContext);
+  //   console.log(getTotalCartAmount())
   return (
     <div className="cartitems">
       <div className="cartitems-format-main">
@@ -24,8 +25,10 @@ const CartItems = () => {
                 <img src={e.image} alt="" className="carticon-product-icon" />
                 <p>{e.name}</p>
                 <p>${e.new_price}</p>
-                <button className="cartitems_quantity">{cartItems[e.id]}</button>
-                <p>${e.new_price*cartItems[e.id]}</p>
+                <button className="cartitems_quantity">
+                  {cartItems[e.id]}
+                </button>
+                <p>${e.new_price * cartItems[e.id]}</p>
                 <img
                   src={remove_icon}
                   onClick={() => {
@@ -42,31 +45,31 @@ const CartItems = () => {
       })}
       <div className="cartitems-down">
         <div className="cartitems-total">
-            <h1>Cart Totals</h1>
-            <div>
-                <div className="cartitems-total-item">
-                    <p>SubTotal</p>
-                    <p>${getTotalCartAmount()}</p>
-                </div>
-                <hr />
-                <div className="cartitems-total-item">
-                    <p>Shipping Fee</p>
-                    <p>Free</p>
-                </div>
-                <hr />
-                <div className="cartitems-total-item">
-                    <h3>Total</h3>
-                    <h3>${getTotalCartAmount()}</h3>
-                </div>
+          <h1>Cart Totals</h1>
+          <div>
+            <div className="cartitems-total-item">
+              <p>SubTotal</p>
+              <p>${getTotalCartAmount()}</p>
             </div>
-            <button>PROCEED TO CHECKOUT</button>
+            <hr />
+            <div className="cartitems-total-item">
+              <p>Shipping Fee</p>
+              <p>Free</p>
+            </div>
+            <hr />
+            <div className="cartitems-total-item">
+              <h3>Total</h3>
+              <h3>${getTotalCartAmount()}</h3>
+            </div>
+          </div>
+          <button>PROCEED TO CHECKOUT</button>
         </div>
         <div className="cartitems-promocode">
-            <p>if you have a promo code, Enter it here</p>
-            <div className="cartitems-promobox">
-                <input type="text"  placeholder="promocode" />
-                <button>Submit</button>
-            </div>
+          <p>if you have a promo code, Enter it here</p>
+          <div className="cartitems-promobox">
+            <input type="text" placeholder="promocode" />
+            <button>Submit</button>
+          </div>
         </div>
       </div>
     </div>
