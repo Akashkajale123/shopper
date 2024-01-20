@@ -11,7 +11,7 @@ const Product = () => {
   // console.log(all_product)
   const { productId } = useParams();
   const product =all_product.find((e) => e.id === Number(productId));
-  console.log(product.id)
+  // console.log(product.id)
 
   return (
     <div>
