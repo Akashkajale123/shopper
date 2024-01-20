@@ -7,9 +7,9 @@ import Product from "./pages/Product.js";
 import Navbar from "./components/Navbar/Navbar.js";
 import Cart from "./pages/Cart.js";
 import Footer from "./components/Footer/Footer.js";
-import men_banner from './Assets/banner_mens.png'
-import women_banner from './Assets/banner_women.png'
-import kids_banner from './Assets/banner_kids.png'
+import men_banner from "./Assets/banner_mens.png";
+import women_banner from "./Assets/banner_women.png";
+import kids_banner from "./Assets/banner_kids.png";
 
 const App = () => {
   return (
@@ -17,9 +17,18 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Shop />} />
-        <Route path="/mens" element={<ShopCategory category="men" banner={men_banner}/>} />
-        <Route path="/womens" element={<ShopCategory category="women" banner={women_banner} />} />
-        <Route path="/kids" element={<ShopCategory category="kid" banner={kids_banner}/>} />
+        <Route
+          path="/mens"
+          element={<ShopCategory category="men" banner={men_banner} />}
+        />
+        <Route
+          path="/womens"
+          element={<ShopCategory category="women" banner={women_banner} />}
+        />
+        <Route
+          path="/kids"
+          element={<ShopCategory category="kid" banner={kids_banner} />}
+        />
         <Route path="/product" element={<Product />}>
           <Route path=":productId" element={<Product />} />
         </Route>
